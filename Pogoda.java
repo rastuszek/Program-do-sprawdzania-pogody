@@ -10,17 +10,17 @@ import java.nio.charset.StandardCharsets;
 
 
 public class Pogoda {
-    private static Pierwsza api;
+    private static Pomocna api;
 
     public static void main(String[] args) throws IOException, JSONException {
         Scanner scan = new Scanner(System.in);
-        api = new Pierwsza();
+        api = new pomocna();
         String miasto;
         int countDays;
 
-        System.out.println("Proszê wpisaæ nazwê miejscowoœci, której chcesz sprawdziæ stan pogody:");
+        System.out.println("ProszÃª wpisaÃ¦ nazwÃª miejscowoÅ“ci, ktÃ³rej chcesz sprawdziÃ¦ stan pogody:");
         miasto = getCity(scan.nextLine());
-        System.out.println("Proszê okresliæ iloœæ dni, licz¹c od dnia dzisiejszego, na ile chcesz sprawdziæ pogodê:");
+        System.out.println("ProszÃª okresliÃ¦ iloÅ“Ã¦ dni, liczÂ¹c od dnia dzisiejszego, na ile chcesz sprawdziÃ¦ pogodÃª:");
         countDays = getDays(scan.nextLine());
         pokazPogode(miasto, countDays);
         scan.close();
@@ -48,21 +48,21 @@ public class Pogoda {
         	
         	
             System.out.println("\n" + "Prognoza pogody dla miasta: " + api.cityName + "\n" +
-            "Aktualna temperatura w stopniach Celcjusza w tej miejscowoœci: " + api.getTemp(0) + "\n");
+            "Aktualna temperatura w stopniach Celcjusza w tej miejscowoÅ“ci: " + api.getTemp(0) + "\n");
             
             for (int i = 0; i < api.weatherData.length; i++) {
                 System.out.println( "\n" +
-                        "Dzieñ: " + api.getForecastDay(i) + "\n" +
+                        "DzieÃ±: " + api.getForecastDay(i) + "\n" +
                         
                         "Przewidywana temperatura w stopniach Celcjusza: " + api.getTemp(i) + "\n" +
                         "Maksymalna temperatura w stopniach Celcjusza: " + api.getMaxTempC(i) + "\n" +
                         "Minimalna temperatura w stopniach Celcjusza: " + api.getMinTempC(i) + "\n" +
-                        "Wilgotnoœæ powietrza: " + api.getHumidity(i) + "% \n" +
-                		"Ciœnienie powietrza: " + api.getCisnienie(i) + " hPa \n" +
-                		"Prêdkoœæ podmuchu wiatru: " + api.getWiatr(i) + " km/h \n");
+                        "WilgotnoÅ“Ã¦ powietrza: " + api.getHumidity(i) + "% \n" +
+                		"CiÅ“nienie powietrza: " + api.getCisnienie(i) + " hPa \n" +
+                		"PrÃªdkoÅ“Ã¦ podmuchu wiatru: " + api.getWiatr(i) + " km/h \n");
             }
         } else {
-            System.out.println("Niestety wystapi³ jakiœ b³¹d");
+            System.out.println("Niestety wystapiÂ³ jakiÅ“ bÂ³Â¹d");
         }
     }
 }
