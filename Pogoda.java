@@ -10,11 +10,11 @@ import java.nio.charset.StandardCharsets;
 
 
 public class Pogoda {
-    private static Glowna api;
+    private static Pierwsza api;
 
     public static void main(String[] args) throws IOException, JSONException {
         Scanner scan = new Scanner(System.in);
-        api = new Glowna();
+        api = new Pierwsza();
         String miasto;
         int countDays;
 

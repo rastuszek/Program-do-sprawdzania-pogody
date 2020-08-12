@@ -12,7 +12,7 @@ import java.net.URL;
 //import java.net.URLEncoder;
 
 
-public class Glowna {
+public class Pierwsza {
     private static final String KEY_VALUE = "3acf8997b3f3492cafd205421202002";
     private static final String KEY = "key";
     private static final String URL_PREFIX = "http://api.worldweatheronline.com/premium/v1/weather.ashx?" + KEY + "=" + KEY_VALUE;
